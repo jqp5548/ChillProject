@@ -1,39 +1,34 @@
 const int buzzer1=9;
+const int buzzer2=8;
+
+void setup() {
+  pinMode(buzzer1, OUTPUT);
+  pinMode(buzzer2, OUTPUT);
+  SystemStartAlert();
 }
 
-}
-}
-}
-}
-
+void loop() {
+  buzzerfunc1();                  //Calling functions to make the buzzer beep alternatively.
+  buzzerfunc2();
 }
 
+void SystemStartAlert(){
+  tone(buzzer1,1000);
+  tone(buzzer2,1000);
+  delay(1000);
+  noTone(buzzer1);
+  noTone(buzzer2);
 }
-
+  
+void buzzerfunc1(){             //function for buzzer1
+    tone(buzzer1,500);            //((buzzer1,500) to send 500Hz sound signal
+    delay(500);                     // for 0.5 sec
+    noTone(buzzer1);
+    delay(500);
 }
-}
-}
-
-}
-
-
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
-}
-
-}
-}
-}
-}
-}
+void buzzerfunc2(){             //function for buzzer2
+    tone(buzzer2,500);              //same
+    delay(300);
+    noTone(buzzer2);
+    delay(300);
 }
